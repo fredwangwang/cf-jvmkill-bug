@@ -1,10 +1,10 @@
 ## What for?
-There is a sample app to illustrate a bug in cf-jvmkill. In rare cases, the jvmkill would fail to kill the 
+There is a sample app to illustrate a conrner bug in cf-jvmkill. Jvmkill would fail to kill the 
 process due to additional memory allocation made by jvmkill agent.
 Specifically, [`PoolStats`](https://github.com/cloudfoundry/jvmkill/blob/master/jvmkill/src/agentcontroller/poolstats.rs).
 
 ## What happen if I push the app?
-Here is the log output
+After push the app for 5s, the jvmkill will be triggered, and hang. Here is the log output
 
 ```
    2019-07-31T22:32:57.49-0600 [API/0] OUT Updated app with guid beae1595-87d0-4489-8cda-c5650f283555 ({"state"=>"STARTED"})
